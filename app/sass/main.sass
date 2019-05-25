@@ -1,113 +1,454 @@
-@import footer.sass
-@import mixin.sass
-@import nav.sass
+
 @import reset.sass
 @import var.sass
+@import mixin.sass
+@import nav.sass
+@import footer.sass
 
-.content
+.button
+    +button
+    +transition(0.2s)
+    &:hover        
+        border-color: #9bf1ff
+        color: #9bf1ff
+
+.burger
+    display: none
+
+main
     width: 100%
+    overflow: auto
 
-    header
-        +flex(row, space-between, baseline)
-        height: 30px 
-        letter-spacing: 0.25em
-        line-height: 25px
-        text-transform: uppercase
-        width: 100%
-        z-index: 100
-        padding: 15px 30px
-        position: fixed
+// ------------------------------HEADER-------------------------------
 
-        .logo
-            +transition(0.3s)
-            z-index: 100
-            &:hover
-                color: #9bf1ff
-        strong
-            background-color: white
-            color: #242943
-            padding: 5px
-            
-        span
-            font-size: 0.85em
-            color: white
-           
-            &:hover
-                color: #9bf1ff
-                  
-        .container
-            +transition(0.3s)
-            z-index: 100
-            &:hover
-                color: #9bf1ff
+header
+    +flex(row, space-between, center)
+    letter-spacing: 0.25em
+    line-height: 25px
+    text-transform: uppercase
+    width: 100%
+    z-index: 100
+    padding: 15px 30px
+    position: fixed
+    background: #242943
 
-        input[type="checkbox"]
-            display: none
+.logo                
+    strong
+        background-color: white
+        color: #242943
+        padding: 3px
+        font-size: 15px
+        +transition(0.3s)
 
-        .burger-check:checked ~ .navigation
-            max-height: 100%
-            opacity: 1
-            width: 100%
-            opacity: 0.85
-            z-index: 100
-            .menu-close 
-                position: absolute
-                right: 0px
+        &:hover
+            background: #9bf1ff
+
+    span
+        font-size: 15px
+        color: white
+        +transition(0.3s)
+
+        &:hover
+            color: #9bf1ff
+
+
+// ------------------------------FACE-------------------------------            
     
-        .navigation
-            z-index: 100
-            opacity: 0
-            left: 0px
-            top: 0px
-            max-height: 100%
-            display: flex
-            justify-content: center
-            flex-direction: column
-            position: fixed
-            background: black
-            align-items: center
-            height: 100%
-            text-align: center
-            visibility: visible
-            .main-nav_bg-close
-                height: 100%
-                width: 100%
-                font-size: 30px
-                line-height: 2em
-                padding-right: 1.15em
-                position: absolute
-                text-align: right
-                .nav_element
-                    display: block
-                    font-size: 1.15em
-                    font-weight: 900
-                    letter-spacing: 0.25em
-                    line-height: 3em
-                    margin: 2em 2em
-                    li
-                        padding: 10px
-                        a 
-                            color: white               
-    .banner
-        background-image: url(../../img/banner.jpg)
-        background-color: transparent
-        background-size: 100%
+#face
+    margin-top: 56px
+    background-image: url(../../img/banner.jpg)
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    width: 100%
+    height: 75vh
+    position: relative
+    z-index: 1
+
+.face-wrap
+    width: 100%
+    height: 75vh
+    background: #2A2F4A
+    opacity: 0.7  
+    position: absolute
+    top: 0px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    z-index: 10
+
+
+    .title
+        width: 80%        
+        position: relative
+        z-index: 100
+        h1
+            margin-bottom: 3%
+            padding-bottom: 3%
+            border-bottom: 1px solid white
+            font-size: 4em
+
+        .text
+            width: auto
+            +flex(row, flex-start, center)
+            p
+                font-size: 1em
+                margin-right: 1.5em
+                text-transform: uppercase
+                letter-spacing: 0.15em
+
+            .fa, .fas
+                margin-left: 1em
+                font-size: 18px
+
+// ------------------------------GALLERY-------------------------------
+
+#gallery
+    display: flex
+    flex-wrap: wrap
+
+
+    .img
+        
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        height: 40vh
+        max-height: 40em
+        min-height: 520px
+        overflow: hidden
+        position: relative
+        width: 40%
+
+    .img-wrap
         width: 100%
-        height: 550px   
-        opacity: 0.70  
-        position: absolute
-        top: 0px
-        .text_banner
-            width: calc(100% - 6em)
-            margin: 0px auto
-            max-width: 65em
-            .text_bb
-                width: auto
-            h1
-                margin-bottom: 2em
-                border-bottom: 1px solid white
-                font-size: 3.25em
+        height: 100%
+        background: #2A2F4A
+        opacity: 0.7
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start 
+        padding: 4em 4em 2em 4em
+        +transition(0.5s)
+
+        .title
+            width: 40%                
+            position: relative
+            z-index: 100
+
+            h2
+                margin-bottom: 8%
+                padding-bottom: 8%
+                border-bottom: 2px solid white
+                font-size: 2.5em
+
+            p
+                font-size: 0.9em
+                margin-right: 1.5em
+                text-transform: uppercase
+                letter-spacing: 0.15em    
+
+    .one
+        background-image: url(../../img/pic01.jpg) 
+        width: 40%
+
+        .img-wrap
+            background-color: #6fc3df
+            &:hover
+                background-color: transparent
+
+    .two
+        background-image: url(../../img/pic02.jpg)
+        width: 60%
+        .img-wrap
+            background-color: #8d82c4
+            &:hover
+                background-color: transparent
+
+    .three
+        background-image: url(../../img/pic03.jpg)
+        width: 60%
+        .img-wrap
+            background-color: #ec8d81
+            &:hover
+                background-color: transparent
+
+    .four
+        background-image: url(../../img/pic04.jpg)
+        width: 40%
+        .img-wrap
+            background-color: #e7b788
+            &:hover
+                background-color: transparent
+
+    .five
+        background-image: url(../../img/pic05.jpg)
+        width: 40%
+        .img-wrap
+            background-color: #8ea9e8
+            &:hover
+                background-color: transparent
+
+    .six
+        background-image: url(../../img/pic06.jpg)
+        width: 60%
+        .img-wrap
+            background-color: #87c5a4
+            &:hover
+                background-color: transparent
+
+// ------------------------------INFO-------------------------------            
+    
+#info
+    width: 100%
+    height: 50vh
+    min-height: 520px
+
+
+.info-wrap
+    width: 100%
+    height: 100%
+    background: #2A2F4A
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+
+
+    .title
+        width: 80%
+        height: 50%
+        min-height: 250px
+        +flex(column, space-around, unset)
+
+        h3
+            padding-bottom: 1%
+            border-bottom: 2px solid white
+            font-size: 3em
+            display: inline-block
+            width: 20% 
+
+        p
+            font-size: 1.3em
+            letter-spacing: 0.15em
+            line-height: 1.5em
+            margin: 3% 0
+
+// ------------------------------CONTACT-------------------------------
+
+
+#contacts
+    width: 100%
+    height: 100vh
+    min-height: 725px
+    background: #242943
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+    
+
+.cont-wrap    
+    padding: 8% 8% 3%
+
+.info
+    +flex(row, unset, unset)
+
+    .inputs
+        width: calc(65.7% - 2em) 
+        border-right: 1px solid rgba(255, 255, 255, 0.15)
+        
+        padding-right: 25px
+        min-height: 470px
+
+        form        
+            display: flex
+            flex-wrap: wrap
+            width: calc(100% + 1.5em)
+            margin-bottom: 20px
+            & > div
+                padding-top: 2%
+
+            .name
+                display: flex
+                width: 100% 
+
+            .form
+                width: 40%
+                margin: 0px 0px 0.5em
+                +font(white, 24px, 2.5, bold)
+                +flex(column, center, unset)
+                margin-right: 10%
+
+                label 
+                    text-transform: uppercase
+                    font-size: 0.8em
+                input
+                    height: 4.5em
+                    width: 100%   
+                    +input_color
+
+            .text
+                width: 90%               
+                textarea                    
+                    height: 250px
+                    +input_color
+
+            .buttons
+                width: 50%
+                display: flex
+                a   
+                    width: 40%
+                    text-align: center
+
+                    &:hover        
+                        border-color: #9bf1ff
+                        color: #9bf1ff
+
+                    &:first-child
+                        width: 60%
+                        background: white
+                        color: #242943
+                        margin-right: 4%
+
+                        &:hover        
+                            background: #9bf1ff
+
+    .contact
+        width: 40%
+
+    .first
+        border-top:none
+
+    .item        
+        width: 100%
+        padding: 80px 50px 50px 120px
+        border-top: 1px solid rgba(255, 255, 255, 0.15)
+        position: relative
+
+
+
+        .icon
+            +span_icon 
+            position: absolute
+            top: 15%
+            left: 8%
+
+            .fa, .fas
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                color: #242943
+
+        .text-wrap
+            text-align: left            
+
+            h4
+                +font(white, 24px, unset, 600)
+                
+            p
+                +font(#DBA9CC, 20px, 1.75, 400)
+
+
+// ------------------------------FOOTER------------------------------
+
+footer
+    +flex (column, center, flex-start) 
+    background-color: #242943
+    height: 240px
+    width: auto
+
+    section 
+        padding: 25px 60px
+        +flex (column, center, flex-start)
+
+    .foo
+        +flex(row, left, baseline)
+
+        li
+            color: #A7A5D9
+            margin-right: 17px
+            border-left: solid 1px rgba(255, 255, 255, 0.15)
+            padding-left: 12px
+
+            a
+                color: #A7A5D9
+                border-bottom: 1px dotted #A7A5D9
+
+
+
+
+
+
+
+
+
+
+
+
+    .bar
+        +transition(0.3s)
+        z-index: 100
+
+        &:hover
+            color: #9bf1ff
+
+    input[type="checkbox"]
+        display: none
+
+    .burger:checked ~ .navigation
+        max-height: 100%
+        opacity: 1
+        width: 100%
+        opacity: 0.85
+        z-index: 100
+
+        .menu-close 
+            position: absolute
+            right: 0px
+
+
+
+
+
 
 
             
         
+/*
+    .navigation
+        z-index: 100
+        opacity: 0
+        left: 0px
+        top: 0px
+        max-height: 100%
+        display: flex
+        justify-content: center
+        flex-direction: column
+        position: fixed
+        background: black
+        align-items: center
+        height: 100%
+        text-align: center
+        visibility: visible
+
+        .main-nav_bg-close
+            height: 100%
+            width: 100%
+            font-size: 30px
+            line-height: 2em
+            padding-right: 1.15em
+            position: absolute
+            text-align: right
+            .nav_element
+                display: block
+                font-size: 1.15em
+                font-weight: 900
+                letter-spacing: 0.25em
+                line-height: 3em
+                margin: 2em 2em
+                li
+                    padding: 10px
+                    a 
+                        color: white*/

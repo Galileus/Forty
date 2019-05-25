@@ -5,4 +5,39 @@
   align-items: $ai
 
 @mixin transition ($time) 
-  transition: all $time  
+  transition: all $time ease-in-out 
+
+@mixin button
+  display: inline-block
+  border: 2px solid #fff
+  padding: 20px
+  color: white
+  text-transform: uppercase
+  font-size: 1em
+  font-weight: 800
+  letter-spacing: 0.10em
+  background-color: transparent
+  width: 15%
+
+  .fa, .fas
+    margin-left: 20px
+
+
+@mixin font ($color, $font-size, $line-height, $font-weight) 
+  color: $color
+  font-size: $font-size
+  line-height: $line-height
+  font-weight: $font-weight
+
+@mixin input_color
+  background-color: #2A2F4A
+  border: none
+  padding: 5px 1em
+
+@mixin span_icon
+  border-radius: 50%
+  width: 50px
+  height: 50px
+  background-color: white
+  color: #BA5596   
+   
