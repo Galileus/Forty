@@ -54,10 +54,8 @@ ul, li {
   color: #9bf1ff;
 }
 
-.burger {
-  display: none;
-}
-
+/*.burger
+ * display: none */
 main {
   width: 100%;
   overflow: auto;
@@ -95,6 +93,98 @@ header {
 }
 .logo span:hover {
   color: #9bf1ff;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.bar {
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+.bar:hover {
+  color: #9bf1ff;
+}
+
+#hidden .hidden {
+  z-index: 100;
+  opacity: 0;
+  left: 0px;
+  top: 0px;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  background: rgba(36, 41, 67, 0.9);
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  visibility: visible;
+}
+#hidden .hidden .close {
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
+  line-height: 2em;
+  padding-right: 1.15em;
+  position: absolute;
+  text-align: right;
+}
+#hidden .hidden .box {
+  width: 270px;
+}
+#hidden .hidden .box .menu {
+  display: block;
+  font-size: 1.15em;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  line-height: 3em;
+  width: 100%;
+}
+#hidden .hidden .box .menu li {
+  padding-bottom: 10px;
+}
+#hidden .hidden .box .menu li a {
+  display: block;
+  width: 100%;
+  color: white;
+  padding: 0px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+#hidden .hidden .box .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hidden .hidden .box .buttons a {
+  width: 100%;
+  text-align: center;
+}
+#hidden .hidden .box .buttons a:hover {
+  border-color: #9bf1ff;
+  color: #9bf1ff;
+}
+#hidden .hidden .box .buttons a:first-child {
+  background: white;
+  color: #242943;
+  margin-bottom: 10px;
+  background: #9bf1ff;
+}
+
+#burger:checked ~ #hidden .hidden {
+  max-height: 100%;
+  opacity: 1;
+  width: 100%;
+  opacity: 0.85;
+  z-index: 100;
+}
+#burger:checked ~ #hidden .hidden .menu-close {
+  position: absolute;
+  right: 0px;
 }
 
 #face {
@@ -459,62 +549,5 @@ footer .foo li a {
   color: #A7A5D9;
   border-bottom: 1px dotted #A7A5D9;
 }
-footer .bar {
-  transition: all 0.3s ease-in-out;
-  z-index: 100;
-}
-footer .bar:hover {
-  color: #9bf1ff;
-}
-footer input[type="checkbox"] {
-  display: none;
-}
-footer .burger:checked ~ .navigation {
-  max-height: 100%;
-  opacity: 1;
-  width: 100%;
-  opacity: 0.85;
-  z-index: 100;
-}
-footer .burger:checked ~ .navigation .menu-close {
-  position: absolute;
-  right: 0px;
-}
-
-/* .navigation
- *     z-index: 100
- *     opacity: 0
- *     left: 0px
- *     top: 0px
- *     max-height: 100%
- *     display: flex
- *     justify-content: center
- *     flex-direction: column
- *     position: fixed
- *     background: black
- *     align-items: center
- *     height: 100%
- *     text-align: center
- *     visibility: visible
- *
- *     .main-nav_bg-close
- *         height: 100%
- *         width: 100%
- *         font-size: 30px
- *         line-height: 2em
- *         padding-right: 1.15em
- *         position: absolute
- *         text-align: right
- *         .nav_element
- *             display: block
- *             font-size: 1.15em
- *             font-weight: 900
- *             letter-spacing: 0.25em
- *             line-height: 3em
- *             margin: 2em 2em
- *             li
- *                 padding: 10px
- *                 a 
- *                     color: white */
 
 /*# sourceMappingURL=main.css.map */

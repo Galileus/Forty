@@ -12,8 +12,8 @@
         border-color: #9bf1ff
         color: #9bf1ff
 
-.burger
-    display: none
+/*.burger
+    display: none*/
 
 main
     width: 100%
@@ -50,6 +50,118 @@ header
 
         &:hover
             color: #9bf1ff
+
+input[type="checkbox"]
+    display: none
+
+
+.bar
+    +transition(0.3s)
+    z-index: 100
+
+    &:hover
+        color: #9bf1ff
+
+
+
+// ------------------------------HIDDEN-------------------------------
+
+        
+#hidden        
+
+    .hidden
+        z-index: 100
+        opacity: 0
+        left: 0px
+        top: 0px
+        max-height: 100%
+        display: flex
+        justify-content: center
+        flex-direction: column
+        position: fixed
+        background: rgba(36, 41, 67, 0.9)
+        align-items: center
+        height: 100%
+        text-align: center
+        visibility: visible
+
+        .close
+            height: 100%
+            width: 100%
+            font-size: 30px
+            line-height: 2em
+            padding-right: 1.15em
+            position: absolute
+            text-align: right
+        
+        .box    
+            width: 270px
+
+
+            .menu
+                display: block
+                font-size: 1.15em
+                font-weight: 900
+                letter-spacing: 0.25em
+                line-height: 3em
+                width: 100%
+
+                li
+                    padding-bottom: 10px
+                    a 
+                        display: block
+                        width: 100%               
+                        color: white    
+                        padding: 0px 40px
+                        border-top: 1px solid rgba(255, 255, 255, 0.15)
+                        
+                        &:first-child
+                            border-top:none
+
+
+            .buttons
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                a   
+                    width: 100%
+                    text-align: center
+
+                    &:hover        
+                        border-color: #9bf1ff
+                        color: #9bf1ff
+
+                    &:first-child
+                        background: white
+                        color: #242943
+                        margin-bottom: 10px
+
+                        &:hover        
+                        background: #9bf1ff
+
+
+#burger:checked ~ #hidden .hidden
+        max-height: 100%
+        opacity: 1
+        width: 100%
+        opacity: 0.85
+        z-index: 100
+
+        .menu-close 
+            position: absolute
+            right: 0px
+
+
+
+
+
+
+
+
+
+
 
 
 // ------------------------------FACE-------------------------------            
@@ -387,68 +499,3 @@ footer
 
 
 
-    .bar
-        +transition(0.3s)
-        z-index: 100
-
-        &:hover
-            color: #9bf1ff
-
-    input[type="checkbox"]
-        display: none
-
-    .burger:checked ~ .navigation
-        max-height: 100%
-        opacity: 1
-        width: 100%
-        opacity: 0.85
-        z-index: 100
-
-        .menu-close 
-            position: absolute
-            right: 0px
-
-
-
-
-
-
-
-            
-        
-/*
-    .navigation
-        z-index: 100
-        opacity: 0
-        left: 0px
-        top: 0px
-        max-height: 100%
-        display: flex
-        justify-content: center
-        flex-direction: column
-        position: fixed
-        background: black
-        align-items: center
-        height: 100%
-        text-align: center
-        visibility: visible
-
-        .main-nav_bg-close
-            height: 100%
-            width: 100%
-            font-size: 30px
-            line-height: 2em
-            padding-right: 1.15em
-            position: absolute
-            text-align: right
-            .nav_element
-                display: block
-                font-size: 1.15em
-                font-weight: 900
-                letter-spacing: 0.25em
-                line-height: 3em
-                margin: 2em 2em
-                li
-                    padding: 10px
-                    a 
-                        color: white*/
